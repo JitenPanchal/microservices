@@ -1,0 +1,5 @@
+package io.javabrains.ratingsdataservice.dtos;
+
+public class Rating {
+
+}

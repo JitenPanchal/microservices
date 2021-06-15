@@ -1,0 +1,7 @@
+package io.javabrains.ratingsdataservice.dtos;
+
+public class Rating {
+
+	private String movieId;
+	private int rating;
+}

@@ -1,0 +1,8 @@
+package io.javabrains.ratingsdataservice.controllers;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class RatingsResource {
+
+}
