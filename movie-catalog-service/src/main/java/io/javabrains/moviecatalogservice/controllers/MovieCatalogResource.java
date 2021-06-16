@@ -4,12 +4,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
+
+
 
 import io.javabrains.moviecatalogservice.dtos.CatalogItem;
 import io.javabrains.moviecatalogservice.dtos.Movie;
@@ -21,12 +24,14 @@ public class MovieCatalogResource {
 
 	private RestTemplate restTemplate;
 	private WebClient.Builder webClientBuilder;
+	private DiscoveryClient discoveryClient;
 
 	@Autowired
-	public MovieCatalogResource(RestTemplate restTemplate, WebClient.Builder webClientBuilder) {
+	public MovieCatalogResource(RestTemplate restTemplate, WebClient.Builder webClientBuilder,DiscoveryClient discoveryClient) {
 		super();
 		this.restTemplate = restTemplate;
 		this.webClientBuilder = webClientBuilder;
+		this.discoveryClient = discoveryClient;
 	}
 
 	@GetMapping(value = "/{userId}")
