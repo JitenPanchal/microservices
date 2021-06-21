@@ -1,0 +1,28 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+server:
+  port: 9999
+spring:
+  application:
+    name: API-GATEWAY
+#  cloud:
+#    gateway:
+#      routes:
+#      - id: movie-catalog-service
+#        uri: lb://movie-catalog-service
+#        predicates:
+#        - Path:/catalog/**
+#      - id: movie-info-service
+#        uri: lb://movie-info-service
+#        predicates:
+#        - Path:/movies/**
+#      - id: ratings-data-service
+#        uri: lb://ratings-data-service
+#        predicates:
+#        - Path:/ratingsdata/**
